@@ -1,0 +1,154 @@
+{%extends 'resource.html'%} {%block title%}
+<title>Leaderboard</title>{%endblock title%} {%block body%}
+<h1 class="text-center">PromoDesk</h1>
+<h2 class="text-center">Leaderboard</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+    <ul class=flashes>
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+
+<div class="container">
+    <style>
+        h1 {
+            color: yellow
+        }
+        
+        h2 {
+            color: #e2e9;
+        }
+        
+        a {
+            color: black;
+        }
+        
+        a:hover {
+            color: #0fa;
+        }
+        
+        hr.rounded {
+            border-top: 8px solid #bbb;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .btn-download {
+            background-color: DodgerBlue;
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            cursor: pointer;
+            font-size: 20px;
+          }
+          
+          /* Darker background on mouse-over */
+          .btn-download:hover {
+            background-color: RoyalBlue;
+          }
+        .butt{
+            background-color: #29bab3;
+            font-weight: bold;
+            width: 10%;
+            padding: 4px 4px;
+            text-align: center;
+            display: inline-block;
+            
+            margin-right:3px;
+            border-radius: 12px;
+        }
+        .butt:hover{
+            background-color: #5495f0;
+            color: #29bab3;
+        }
+        .butt_{
+            background-color: #29bab3;
+            font-weight: bold;
+            width: 25%;
+            padding: 4px 4px;
+            text-align: center;
+            display: inline-block;
+            margin-right:3px;
+            border-radius: 12px;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 200px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        
+        }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 6px 10px;
+        }
+        th, td {
+            text-align: center;
+            padding: 6px;
+        }
+          
+        tr:nth-child(even) {
+            background-color: white;
+        }
+        
+    </style>
+
+    <br>
+    <br>
+
+    <center><div style="overflow-x:auto;">
+        <table class="styled-table" border='1' style="margin-left: auto;
+        margin-right: auto; background-color:white">
+            <thead>
+                <tr>
+                        <th>Name</th>
+                        <th >Email</th>
+                        <th >UpVotes</th>
+                        <th >Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                    {% for i in stu  %}
+                        
+                        <tr>
+                        <td >{{i.name}}</td>
+    
+                        <td >{{i.email}}</td>
+                        <td >{{i.upvotes}}</td>
+                        <td >
+                            <form method="post" action="{{ url_for('upvote') }}">
+                                <input type="hidden" name="business_id" value="{{ i.id }}">
+                                <button type="submit" class="btn btn-primary">Upvote</button>
+                            </form>
+                        </td>
+                    
+                        
+                        </tr>
+                    {% endfor %}
+                    
+            </tbody>
+        </table>
+        
+    
+    
+    
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}
+
+
+

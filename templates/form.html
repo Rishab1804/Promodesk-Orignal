@@ -1,0 +1,48 @@
+{% extends 'resource.html'%} {% block title%}
+<title>PromoDesk</title>{%endblock title%} {% block body%}
+<div class="container">
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+        
+        a {
+            color: black;
+        }
+        
+        a:hover {
+            color: yellow;
+        }
+    </style>
+    <h1 class='text-center'>PromoDesk</h1>
+    <h2 class="text-center">Forms</h2>
+    <br>
+    <div class="p-3 mb-2 bg-success text-black">
+        <a class="text-center" href="/entrepreneur">
+            <h3>For Entrepreneurs</h3>
+        </a>
+    </div>
+    <div class="p-3 mb-2 bg-danger text-black">
+        <a class="text-center" href="/investor">
+            <h3>For Investors</h3>
+        </a>
+
+    </div>
+    <div class="p-3 mb-2 bg-warning text-black">
+        <a class="text-center" href="/mentor">
+            <h3>For Mentors</h3>
+        </a>
+
+    </div>
+
+    <div class="p-3 mb-2 bg-info text-black">
+        <a class="text-center" href="/cofounder">
+            <h3>For Co-Founders</h3>
+        </a>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}

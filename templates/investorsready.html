@@ -1,0 +1,57 @@
+{%extends 'resource.html'%} {%block title%}
+<title>Business(es) for you</title>{%endblock title%} {%block body%}
+<h1 class="text-center">PromoDesk</h1>
+<h2 class="text-center">Business(es) for You</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+    <ul class=flashes>
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+
+<div class="container">
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+        
+        label {
+            color: black
+        }
+    </style>
+
+    <br>
+    
+    <br> {%for business in data%}
+    <div class="card text-white bg-dark mb-3" style="max-width: auto" align="center">
+        <div class="card-header">{{business.name}}</div>
+        <div class="card-body">
+            <h4 class="card-text" style="color:rgb(196, 174, 255)">Category: {{business.category}}</h4>
+            <h4 class="card-text" style="color:rgb(196, 174, 255)">amount: {{business.amount}}</h4>
+            <h4 class="card-text" style="color:rgb(196, 174, 255)">Equity: {{business.equity}}</h4>
+            <h4 class="card-text" style="color:rgb(196, 174, 255)">Description: {{business.description}}</h4>
+            <p class="card-text"><small class="text-muted">Upvotes: {{ business.upvotes }}</small></p>
+            <form method="post" action="{{ url_for('upvote') }}">
+                <input type="hidden" name="business_id" value="{{ business.id }}">
+                <button type="submit" class="btn btn-primary">Upvote</button>
+            </form>
+            <a href="mailto:{{business.email}}">
+                <h4 class="card-text" style="color:rgb(196, 174, 255)">Email: {{business.email}}</h4>
+            </a>
+        </div>
+    </div>
+    <br> {%endfor%}
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}

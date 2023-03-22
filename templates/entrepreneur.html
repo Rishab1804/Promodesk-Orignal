@@ -1,0 +1,49 @@
+{% extends 'resource.html'%} {% block title%}
+<title>Entrepreneur</title>{%endblock title%} {% block body%}
+<div class="container">
+    <h1 class='text-center'>PromoDesk</h1>
+    <h2 class="text-center">Your Business</h2>
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+        
+        label {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+    <form action="/entrepreneur" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputLocation">Category</label>
+                <input type="text" class="form-control" title="Eg.Agriculture,Healthcare,Technology" id="inputLocation" name="category">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLocation">Name</label>
+                <input type="text" class="form-control" id="inputLocation" name="name">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputJob">Equity</label>
+                <input type="number" class="form-control" id="inputJob_type" name="equity">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputSalary" title="Enter the amount you want.  ">Amount</label>
+                <input type="number" class="form-control" id="inputSalary" name="amount">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputDescription">Describe Business</label>
+                <br>
+                <textarea name="describe" rows="10" cols="150"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Apply</button>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}

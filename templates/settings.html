@@ -1,0 +1,37 @@
+{%extends 'resource.html'%} {%block title%}
+<title>PromDesk Settings</title>
+{%endblock title%} {%block body%}
+<style>
+    h1 {
+        color: rgb(24, 0, 131);
+    }
+    
+    h2 {
+        color: rgb(255, 0, 85);
+    }
+    
+    a {
+        color: black;
+    }
+    
+    a:hover {
+        color: rgb(21, 255, 0);
+    }
+</style>
+
+<h1 class='text-center'>PromoDesk</h1>
+<h2 class='text-center'>Settings Page</h2>
+<div class="container">
+    <div class="p-3 mb-2 bg-warning text-black">
+        <a class="text-center" href="/deletebusiness">
+            <h3>Delete Your Business Ask</h3>
+        </a>
+    </div>
+    <div class="p-3 mb-2 bg-danger text-black">
+        <a class="text-center" href="/delete">
+            <h3>Delete Your Account</h3>
+        </a>
+
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}

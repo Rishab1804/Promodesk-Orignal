@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> {%block title%}
+    <title>Promoting Hub</title>{%endblock title%}
+</head>
+
+<body style="background:linear-gradient(90deg,rgb(132, 255, 144),rgb(235, 107, 255))">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="#"><img style="width:50px;" src="{{url_for('static', filename='icon.jpg')}}" alt="A Image"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a style="color:rgb(255, 149, 0)" class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a style="color:rgb(0, 225, 255)" class="nav-link" href="/about">About</a> {% if current_user.is_authenticated%}
+                <a style="color:rgb(238, 255, 0)" class="nav-link" href="/form">Form</a>
+                <a style="color:rgb(60, 255, 0)" class="nav-link" href="/investorsready">Business Avaialable</a>
+                <a style="color:rgb(0, 115, 153)" class="nav-link" href="https://promodesk-blog.onrender.com">Blogs</a>
+                <a style="color:rgb(255, 0, 149)" class="nav-link" href="/leaderboard">Leaderboard</a>
+                <a style="color:rgb(255, 0, 0)" class="nav-link" href="/mentorready">Mentors Avaialable</a>
+                <a style="color:rgb(153, 153, 255)" class="nav-link" href="/cofounderready">Co-Founders Avaialable</a>
+                <a style="color:rgb(182, 65, 255)" class="nav-link" href="/settings">Settings</a>
+                <a style="color:rgb(29, 153, 255)" class="nav-link" href="/logout">Logout</a> {%else%}
+                <a style="color:rgb(0, 255, 187)" class="nav-link" href="/register">Register</a>
+                <a style="color:rgb(255, 255, 163)" class="nav-link" href="/login">Login</a> {%endif%}
+            </div>
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    {%block body%} {%endblock body%}
+</body>
+
+</html>

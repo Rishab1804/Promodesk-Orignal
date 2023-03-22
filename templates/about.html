@@ -1,0 +1,36 @@
+{% extends 'resource.html'%} {% block title%}
+<title>PromoDesk</title>
+{%endblock title%} {% block body%}
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+    <ul class=flashes>
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+        </div>
+        {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <h1 class='text-center'>PromoDesk</h1>
+    <div class="container">
+        <h2 class="text-center">About</h2>
+        <div class="jumbotron">
+            <h1 class="display-4">PromoDesk</h1>
+            <p class="lead"> <i>It's the desk of entrepreneurs and investors</i> to meet and get funding. The entrepreneurs can upload their business on the website and investors can create their account. Then as soon as investors search for business in their respective categories the business of entrepreneurswould be avaialble. Excperienced entrepreneurs can write blogs from which start-ups can find solutions for their problems. For personalized problem solving buisness can hire mentors as well. A business requires day to day support as well, for which we have listed various co-founders.  <b>We have an all in 1 place for entrepreneurs!!</b></p>
+            <hr class="my-4">
+            <p>The below is the github code link for the project.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Github</a>
+        </div>
+    </div>
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+    </style>{%endblock body%}

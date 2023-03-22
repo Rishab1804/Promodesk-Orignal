@@ -1,0 +1,28 @@
+{% extends 'resource.html'%} {% block title%}
+<title>Investor</title>{%endblock title%} {% block body%}
+<div class="container">
+    <h1 class='text-center'>PromoDesk</h1>
+    <h2 class="text-center">Your profile as an investor</h2>
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+        
+        label {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+    <form action="/investor" method="POST">
+        <div class="form-row">
+            
+            <div class="form-group col-md-6">
+                <label for="inputLocation">Category</label>
+                <input type="text" class="form-control" title="Eg.Agriculture,Healthcare,Technology" id="inputLocation" name="category">
+
+                <br>
+                <button type="submit" class="btn btn-primary">Sumbit</button></div>
+    </form> <br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}

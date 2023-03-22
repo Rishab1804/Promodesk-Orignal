@@ -1,0 +1,39 @@
+{% extends 'resource.html'%} {% block title%}
+<title>Co-Founder</title>{%endblock title%} {% block body%}
+<div class="container">
+    <h1 class='text-center'>PromoDesk</h1>
+    <h2 class="text-center">Your Profile as Co-Founder</h2>
+    <style>
+        h1 {
+            color: rgb(24, 0, 131);
+        }
+        
+        h2 {
+            color: rgb(255, 0, 85);
+        }
+        
+        label {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+    <form action="/cofounder" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">First Name</label>
+                <input type="text" class="form-control" id="inputCity" name="name">
+            </div>
+            <div class="form-group col-md-6">
+                    <label for="inputpZi">Surname</label>
+                    <input type="text" class="form-control" id="inputZip" name="surname">
+                </div>
+            <div class="form-group col-md-6">
+                <label for="input">Experience</label>
+                <input type="text" class="form-control" id="input" name="Experience">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputLocation">Category</label>
+                <input type="text" class="form-control" title="Eg.Agriculture,Healthcare,Technology" id="inputLocation" name="category">
+
+                <br>
+                <button type="submit" class="btn btn-primary">Sumbit</button></div>
+    </form> <br><br><br><br><br><br><br><br><br><br><br><br> {%endblock body%}
